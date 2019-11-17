@@ -1,22 +1,23 @@
 import Taro, { Component } from '@tarojs/taro'
 // eslint-disable-next-line import/first
 import {View} from "@tarojs/components";
+import Search from "../search";
 // eslint-disable-next-line import/first
 import { connect } from '@tarojs/redux'
-import { home } from '../../actions/counter'
+import { } from '../../actions/counter'
 
 @connect(({ counter }) => ({
   counter
 }), (dispatch) => ({
-  homeData(){
-    dispatch(home())
+  onTest(){
+    dispatch()
   }
 }))
 class Home extends Component {
 
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
-  }
+}
 
   componentWillUnmount () { }
 
@@ -26,7 +27,10 @@ class Home extends Component {
 
   render () {
       return <View>
-        Home Page
+        <Search />
+        <View>
+          Home Page
+        </View>
       </View>
   }
 }

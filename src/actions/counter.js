@@ -1,6 +1,7 @@
 import {
   PAGE,
-  HOME
+  SEARCH,
+  SEARCH_BTN,
 } from '../constants/counter'
 
 export const page = (e) => {
@@ -10,8 +11,16 @@ export const page = (e) => {
   }
 }
 
-export const home = () => {
+export const searchBar = (e) => {
   return {
-    type: HOME
+    search: e,
+    type: SEARCH
+  }
+}
+
+export const searchBtn = (e) => {
+  return {
+    searchData: e,
+    type: SEARCH_BTN
   }
 }
