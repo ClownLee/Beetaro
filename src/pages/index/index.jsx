@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import TNavBar from "../components/TNavBar";
+import My from '../my'
 // eslint-disable-next-line import/first
 import { connect } from '@tarojs/redux'
 import { home } from '../../actions/counter'
@@ -8,6 +8,7 @@ import { home } from '../../actions/counter'
 import './index.scss'
 import Home from "../home";
 import Cart from "../cart";
+// eslint-disable-next-line import/first
 import {View} from "@tarojs/components";
 import BTabBar from "../components/BTabBar";
 
@@ -21,7 +22,7 @@ import BTabBar from "../components/BTabBar";
 }))
 class Index extends Component {
 
-    config = {
+  config = {
     navigationBarTitleText: '冉冉童装'
   }
 
@@ -37,7 +38,7 @@ class Index extends Component {
 
   render () {
       const { page } = this.props.counter;
-      return (page === 2)?<TNavBar />:
+      return (page === 2)?<My />:
         <View>
           {(page === 0)?<Home />:<Cart />}
           <BTabBar />
